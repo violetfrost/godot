@@ -134,9 +134,9 @@ vec2 multiview_uv(vec2 uv) {
 }
 #endif //USE_MULTIVIEW
 
-layout(location = 12) out smooth float frag_depth;
+layout(location = 15) out smooth float frag_depth;
 
-layout(location = 13) out flat float is_perspective;
+layout(location = 16) out flat float is_perspective;
 
 invariant gl_Position;
 
@@ -583,9 +583,9 @@ vec2 multiview_uv(vec2 uv) {
 }
 #endif //USE_MULTIVIEW
 
-layout(location = 12) in smooth float frag_depth;
+layout(location = 15) in smooth float frag_depth;
 
-layout(location = 13) in flat float is_perspective;
+layout(location = 16) in flat float is_perspective;
 
 //defines to keep compatibility with vertex
 
@@ -2279,6 +2279,6 @@ if (is_perspective != 0.0) {
 		// code paths or not at all.
 		gl_FragDepth = gl_FragCoord.z;
 	}
-	
+
 	fragment_shader(scene_data_block.data);
 }
